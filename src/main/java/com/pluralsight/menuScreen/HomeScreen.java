@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.menuScreen;
 
 public class HomeScreen {
 
