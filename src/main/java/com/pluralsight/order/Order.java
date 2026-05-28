@@ -24,15 +24,17 @@ public class Order {
         tacoOrder.add(taco);
         totalPrice += taco.getPrice();
     }
-
     public void addAppetizer(Appetizer appetizer) {
         appetizerOrder.add(appetizer);
         totalPrice += appetizer.getPrice();
     }
-
     public void addDrink(Drink drink) {
         drinkOrder.add(drink);
         totalPrice += drink.getPrice();
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
     public ArrayList<Taco> getTacoOrder() {
