@@ -15,13 +15,35 @@ public class DrinkScreen {
     public Drink buildDrink() {
         System.out.println("\n==== Drink Menu ====");
 
-        System.out.println("Enter Drink number: ");
         System.out.println("1) Fountain Drink - Maine Root (Cola, Diet Cola, Root Beer, Ginger Brew, Pink Drink, Doppelganger)");
         System.out.println("2) Iced Tea (Black, Hibiscus)");
         System.out.println("3) Coffee (Bold Blend, Tacodeli Blend)");
         System.out.println("4) Aguas Frescas (Horchata, Melon, Jamaica, Limonada, Cold Brew, The Cha Cha)");
         System.out.println("5) Alcoholic Beverage (Guavarita, On The Rocks, Ranch Water, Frozen Margarita)");
-        String name = scanner.nextLine();
+        System.out.print("Enter Drink number: ");
+        String choice = scanner.nextLine().trim();
+        String drinkName;
+
+        switch(choice) {
+            case "1":
+                drinkName = "Fountain Drink";
+                break;
+
+            case "2":
+                drinkName = "Iced Tea";
+                break;
+            case "3":
+                drinkName = "Coffee";
+                break;
+            case "4":
+                drinkName = "Aguas Frescas";
+                break;
+            case "5":
+                drinkName = "Alcoholic Beverage";
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
 
         System.out.println("Select a size: ");
         System.out.println("S - Small");

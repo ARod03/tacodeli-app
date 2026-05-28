@@ -9,7 +9,15 @@ public class Appetizer {
 
     public Appetizer(String dipping, double price) {
         this.dipping = dipping;
-        this.price = price;
+
+        if (dipping.equalsIgnoreCase("S")) {
+            this.price = 3.50;
+        } else if (dipping.equalsIgnoreCase("Q")) {
+            this.price = 4.00;
+        } else if (dipping.equalsIgnoreCase("G")) {
+            this.price = 5.00;
+        }
+
     }
 
     public String getDipping() {
