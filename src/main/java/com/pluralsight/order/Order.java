@@ -19,9 +19,20 @@ public class Order {
     //This is to get the sum of the tacos, drinks, and appetizers ordered
     public double getTotalPrice() {
         double totalPrice = 0;
+        //For-loops to calculate the prices of each item.
+        for (Taco taco : tacoOrder) {
+            totalPrice += taco.getPrice();
+        }
+        for (Appetizer appetizer : appetizerOrder) {
+            totalPrice += appetizer.getPrice();
+        }
+        for (Drink drink : drinkOrder) {
+            totalPrice += drink.getPrice();
+        }
         return totalPrice;
     }
 
+    //This is the display
     public void display(){
         System.out.println("1) Add Taco");
         System.out.println("2) Add Drink");
