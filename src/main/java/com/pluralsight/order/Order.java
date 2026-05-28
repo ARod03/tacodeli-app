@@ -8,37 +8,41 @@ import java.util.ArrayList;
 
 public class Order {
 
-    private ArrayList<Taco> tacoOrder = new ArrayList<>();
-    private ArrayList<Appetizer>appetizerOrder  = new ArrayList<>();
-    private ArrayList<Drink>drinkOrder = new ArrayList<>();
+    private ArrayList<Taco> tacoOrder;
+    private ArrayList<Appetizer>appetizerOrder;
+    private ArrayList<Drink>drinkOrder;
+    private double totalPrice;
 
-    public void addTaco(Taco taco) {tacoOrder.add(taco);}
-    public void addDrink(Drink drink) {drinkOrder.add(drink);}
-    public void addAppetizer(Appetizer appetizer) {appetizerOrder.add(appetizer);}
-
-    //This is to get the sum of the tacos, drinks, and appetizers ordered
-    public double getTotalPrice() {
-        double totalPrice = 0;
-        //For-loops to calculate the prices of each item.
-        for (Taco taco : tacoOrder) {
-            totalPrice += taco.getPrice();
-        }
-        for (Appetizer appetizer : appetizerOrder) {
-            totalPrice += appetizer.getPrice();
-        }
-        for (Drink drink : drinkOrder) {
-            totalPrice += drink.getPrice();
-        }
-        return totalPrice;
+    public Order() {
+        this.tacoOrder = new ArrayList<>();
+        this.appetizerOrder = new ArrayList<>();
+        this.drinkOrder = new ArrayList<>();
+        this.totalPrice = 0;
     }
 
-    //This is the display
-    public void display(){
-        System.out.println("1) Add Taco");
-        System.out.println("2) Add Drink");
-        System.out.println("3) Add Appetizer");
-        System.out.println("4) Checkout");
-        System.out.println("0) Cancel Order");
+    public void addTaco(Taco taco) {
+        tacoOrder.add(taco);
+        totalPrice += taco.getPrice();
+    }
+
+    public void addAppetizer(Appetizer appetizer) {
+        appetizerOrder.add(appetizer);
+        totalPrice += appetizer.getPrice();
+    }
+
+    public void addDrink(Drink drink) {
+        drinkOrder.add(drink);
+        totalPrice += drink.getPrice();
+    }
+
+    public ArrayList<Taco> getTacoOrder() {
+        return tacoOrder;
+    }
+    public ArrayList<Appetizer> getAppetizerOrder() {
+        return appetizerOrder;
+    }
+    public ArrayList<Drink> getDrinkOrder() {
+        return drinkOrder;
     }
 
 }
