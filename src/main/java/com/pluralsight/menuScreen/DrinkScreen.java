@@ -21,6 +21,15 @@ public class DrinkScreen {
         System.out.println("3) Coffee (Bold Blend, Tacodeli Blend)");
         System.out.println("4) Aguas Frescas (Horchata, Melon, Jamaica, Limonada, Cold Brew, The Cha Cha)");
         System.out.println("5) Alcoholic Beverage (Guavarita, On The Rocks, Ranch Water, Frozen Margarita)");
+        String name = scanner.nextLine();
+
+        System.out.println("Select a size: ");
+        System.out.println("S - Small");
+        System.out.println("M - Medium");
+        System.out.println("L - Large");
+        String size = scanner.nextLine();
+
+
     }
 
 }
