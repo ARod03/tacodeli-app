@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Taco {
 
-    //Create a constructor for parts of a BYO taco
+    //Create a constructor for all parts that make a BYO taco
     private String size;
     private String tortilla;
     private ArrayList<String> protein;
