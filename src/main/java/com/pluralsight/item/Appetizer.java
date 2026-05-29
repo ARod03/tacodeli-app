@@ -7,7 +7,7 @@ public class Appetizer {
     private String dipping;
     private double price;
 
-    public Appetizer(String dipping, double price) {
+    public Appetizer(String dipping) {
         this.dipping = dipping;
 
         if (dipping.equalsIgnoreCase("S")) {
