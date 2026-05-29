@@ -37,9 +37,9 @@ public class TacoScreen {
             System.out.println("N) No tortilla");
             System.out.print("Enter choice: ");
 
-            String choice = scanner.nextLine().trim();
+            String tortillaChoice = scanner.nextLine().trim();
 
-            switch (choice) {
+            switch (tortillaChoice) {
                 case "1":
                     tortilla = "Flour";
                     break;
@@ -72,9 +72,9 @@ public class TacoScreen {
                 System.out.println("D) Done");
                 System.out.print("Enter choice: ");
 
-                String choice = scanner.nextLine().trim().toUpperCase();
+                String proteinChoice = scanner.nextLine().trim().toUpperCase();
 
-                switch (choice) {
+                switch (proteinChoice) {
                     case "1":
                         addIfNotExists(protein, "Chicken");
                         break;
@@ -128,9 +128,9 @@ public class TacoScreen {
                 System.out.println("D) Done");
                 System.out.print("Enter choice: ");
 
-                String choice = scanner.nextLine().trim().toUpperCase();
+                String dairyChoice = scanner.nextLine().trim().toUpperCase();
 
-                switch (choice) {
+                switch (dairyChoice) {
                     case "1":
                         addIfNotExists(dairy, "Jack Cheese");
                         break;
@@ -178,9 +178,9 @@ public class TacoScreen {
                 System.out.println("D) Done");
                 System.out.print("Enter choice: ");
 
-                String choice = scanner.nextLine().trim().toUpperCase();
+                String toppingsChoice = scanner.nextLine().trim().toUpperCase();
 
-                switch (choice) {
+                switch (toppingsChoice) {
                     case "1":
                         addIfNotExists(toppings, "Whole Black Beans");
                         break;
@@ -243,9 +243,9 @@ public class TacoScreen {
                 System.out.println("N) No Salsa");
                 System.out.print("Enter choice: ");
 
-                String choice = scanner.nextLine().trim().toUpperCase();
+                String salsaChoice = scanner.nextLine().trim().toUpperCase();
 
-                switch (choice) {
+                switch (salsaChoice) {
                     case "1":
                         salsa = "Verde";
                         break;
@@ -281,9 +281,9 @@ public class TacoScreen {
                 System.out.println("D) Done");
                 System.out.print("Enter choice: ");
 
-                String choice = scanner.nextLine().trim().toUpperCase();
+                String sidesChoice = scanner.nextLine().trim().toUpperCase();
 
-                switch (choice) {
+                switch (sidesChoice) {
                     case "1":
                         addIfNotExists(sides, "Chips");
                         break;
@@ -305,9 +305,14 @@ public class TacoScreen {
                         System.out.println("Invalid choice.");
                 }
             }
-
-
         }
-
+    }
+    private void addIfNotExists(ArrayList<String> list, String item) {
+        if (!list.contains(item)) {
+            list.add(item);
+            System.out.println(item + " added.");
+        } else {
+            System.out.println(item + " already selected.");
+        }
     }
 }

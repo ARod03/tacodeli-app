@@ -28,6 +28,18 @@ public class Order {
         drinks.add(drink);
     }
 
+    public ArrayList<Taco> getTacos() {
+        return tacos;
+    }
+
+    public ArrayList<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public ArrayList<Appetizer> getAppetizers() {
+        return appetizers;
+    }
+
     public double getTotalPrice() {
         double total = 0;
 
