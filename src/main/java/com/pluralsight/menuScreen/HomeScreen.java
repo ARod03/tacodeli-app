@@ -32,22 +32,60 @@ public class HomeScreen {
             String menuChoice = scanner.nextLine().trim();
             switch (menuChoice) {
                 case "1":
-                    TacoScreen tacoScreen = new TacoScreen();
-                    Taco taco = tacoScreen.buildTaco();
-                    order.addTaco(taco);
-                    System.out.println("Taco added successfully");
+                    boolean addMoreTacos = true;
+
+                    while (addMoreTacos) {
+                        TacoScreen tacoScreen = new TacoScreen();
+                        Taco taco = tacoScreen.buildTaco();
+                        order.addTaco(taco);
+                        System.out.println("Taco added successfully");
+
+                        System.out.println("\nWould you like to add another taco?");
+                        System.out.println("1) Yes");
+                        System.out.println("2) No");
+                        System.out.print("Enter your choice: ");
+
+                        String againTaco = scanner.nextLine().trim();
+                        if (!againTaco.equals("1")){
+                            addMoreTacos = false;
+                        }
+                    }
                     break;
                 case "2":
-                    DrinkScreen drinkScreen = new DrinkScreen();
-                    Drink drink = drinkScreen.buildDrink();
-                    order.addDrink(drink);
-                    System.out.println("Drink added successfully");
+                    boolean addMoreDrinks = true;
+                    while (addMoreDrinks) {
+                        DrinkScreen drinkScreen = new DrinkScreen();
+                        Drink drink = drinkScreen.buildDrink();
+                        order.addDrink(drink);
+                        System.out.println("Drink added successfully");
+
+                        System.out.println("\nWould you like to add another drink?");
+                        System.out.println("1) Yes");
+                        System.out.println("2) No");
+                        System.out.print("Enter your choice: ");
+                        String againDrink = scanner.nextLine().trim();
+                        if (!againDrink.equals("1")){
+                            addMoreDrinks = false;
+                        }
+                    }
                     break;
                 case "3":
-                    AppetizerScreen appetizerScreen = new AppetizerScreen();
-                    Appetizer appetizer = appetizerScreen.buildAppetizer();
-                    order.addAppetizer(appetizer);
-                    System.out.println("Appetizer added successfully");
+                    boolean addMoreAppetizers = true;
+                    while (addMoreAppetizers) {
+                        AppetizerScreen appetizerScreen = new AppetizerScreen();
+                        Appetizer appetizer = appetizerScreen.buildAppetizer();
+                        order.addAppetizer(appetizer);
+                        System.out.println("Appetizer added successfully");
+
+                        System.out.println("\nWould you like to add another appetizer?");
+                        System.out.println("1) Yes");
+                        System.out.println("2) No");
+                        System.out.print("Enter your choice: ");
+                        String againAppetizer = scanner.nextLine().trim();
+                        if (!againAppetizer.equals("1")){
+                            addMoreAppetizers = false;
+                        }
+                    }
                     break;
                 case "4":
                     Receipt receipt = new Receipt();
