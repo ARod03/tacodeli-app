@@ -12,13 +12,12 @@ public class Drink {
         this.drinkName = drinkName;
         this.size = size;
 
+        //Create if else-if statements to determine the prices of each size drink
         if (size.equalsIgnoreCase("Small")) {
             this.price = 2.50;
-        }
-        else if (size.equalsIgnoreCase("Medium")) {
+        } else if (size.equalsIgnoreCase("Medium")) {
             this.price = 3.00;
-        }
-        else if (size.equalsIgnoreCase("Large")) {
+        } else if (size.equalsIgnoreCase("Large")) {
             this.price = 3.50;
         }
     }

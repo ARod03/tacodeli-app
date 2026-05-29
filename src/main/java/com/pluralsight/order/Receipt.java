@@ -45,6 +45,7 @@ public class Receipt {
             receipt.append("\n");
         }
 
+        //This displays the total of the users order
         receipt.append("========================================\n");
         receipt.append("TOTAL: $").append(String.format("%.2f", order.getTotalPrice())).append("\n");
         receipt.append("========================================\n");
@@ -59,7 +60,7 @@ public class Receipt {
     private String formatTaco(Taco taco) {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(" - Taco (").append(taco.getSize()).append(", ").append(taco.getTortilla().isEmpty() ? "No Tortilla" : taco.getTortilla()).append(")\n");
+        sb.append("Taco [").append(taco.getSize()).append(", ").append(taco.getTortilla().isEmpty() ? "No Tortilla" : taco.getTortilla()).append("]\n");
         sb.append("Proteins: ").append(listOrNone(taco.getProtein())).append("\n");
         sb.append("Dairy: ").append(listOrNone(taco.getDairy())).append("\n");
         sb.append("Salsa: ").append(taco.getSalsa().isEmpty() ? "None" : taco.getSalsa()).append("\n");
@@ -79,7 +80,7 @@ public class Receipt {
             sb.append("\n");
         }
 
-        sb.append("   Sides: ").append(listOrNone(taco.getSides())).append("\n");
+        sb.append("Sides: ").append(listOrNone(taco.getSides())).append("\n");
         sb.append("   Price: $").append(String.format("%.2f", taco.getPrice())).append("\n");
         return sb.toString();
     }
@@ -92,6 +93,7 @@ public class Receipt {
         return list.isEmpty() ? "None" : list.toString();
     }
 
+    //Method write and store receipt files into a receipts folder
     private void writeReceiptToFile(String text) {
         try {
             String folderPath = "src/main/resources/receipts/";
@@ -114,6 +116,8 @@ public class Receipt {
             System.out.println("Error writing receipt: " + e.getMessage());
         }
     }
+
+    //Method to format the current date
     private String getFormattedDate() {
         return LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm"));

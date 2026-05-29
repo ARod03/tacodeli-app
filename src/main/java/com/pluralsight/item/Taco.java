@@ -26,6 +26,7 @@ public class Taco {
         calculatePrice();
     }
 
+    //Method to determine the price of the size of a base BYO taco
     private void calculatePrice() {
         price = 0;
 
@@ -35,6 +36,8 @@ public class Taco {
             price += 3.70;
         }
 
+
+        //If statements for protein prices
         if (protein != null) {
             for (String p : protein) {
                 if (p.equalsIgnoreCase("Chicken"))
@@ -58,6 +61,7 @@ public class Taco {
             }
         }
 
+        //If statements for dairy prices
         if (dairy != null) {
             for (String d : dairy) {
                 if (d.equalsIgnoreCase("Jack Cheese"))
@@ -71,6 +75,7 @@ public class Taco {
             }
         }
 
+        //If statements for toppings. Toppings are free except for premium toppings
         if (toppings != null) {
             for (String t : toppings) {
                 if (t.equalsIgnoreCase("Avocado") || t.equalsIgnoreCase("Fresh Spinach") || t.equalsIgnoreCase("Sauteed Spinach")) {
@@ -79,10 +84,12 @@ public class Taco {
             }
         }
 
+        //Salsas are free except the specialty Dona salsa
         if (salsa != null && salsa.equalsIgnoreCase("Dona")) {
             price += 0.10;
         }
 
+        //Price for a side
         if (sides != null) {
             price += sides.size() * 1.75;
         }
@@ -119,6 +126,7 @@ public class Taco {
     public double getPrice() {
         return price;
     }
+
 
     @Override
     public String toString() {

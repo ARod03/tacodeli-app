@@ -18,6 +18,7 @@ public class HomeScreen {
         this.order = new Order();
     }
 
+    //This is the Home Screen display
     public void displayHomeScreen() {
         boolean running = true;
         while (running) {
@@ -30,10 +31,13 @@ public class HomeScreen {
             System.out.print("Enter your choice: ");
 
             String menuChoice = scanner.nextLine().trim();
+
+            //Switch statements to open up different screens that the user chooses
             switch (menuChoice) {
                 case "1":
                     boolean addMoreTacos = true;
 
+                    //While loops to make sure the user wants to add another taco, drink, or appetizer
                     while (addMoreTacos) {
                         TacoScreen tacoScreen = new TacoScreen();
                         Taco taco = tacoScreen.buildTaco();
@@ -46,7 +50,7 @@ public class HomeScreen {
                         System.out.print("Enter your choice: ");
 
                         String againTaco = scanner.nextLine().trim();
-                        if (!againTaco.equals("1")){
+                        if (!againTaco.equals("1")) {
                             addMoreTacos = false;
                         }
                     }
@@ -64,7 +68,7 @@ public class HomeScreen {
                         System.out.println("2) No");
                         System.out.print("Enter your choice: ");
                         String againDrink = scanner.nextLine().trim();
-                        if (!againDrink.equals("1")){
+                        if (!againDrink.equals("1")) {
                             addMoreDrinks = false;
                         }
                     }
@@ -82,7 +86,7 @@ public class HomeScreen {
                         System.out.println("2) No");
                         System.out.print("Enter your choice: ");
                         String againAppetizer = scanner.nextLine().trim();
-                        if (!againAppetizer.equals("1")){
+                        if (!againAppetizer.equals("1")) {
                             addMoreAppetizers = false;
                         }
                     }

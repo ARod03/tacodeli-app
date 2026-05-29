@@ -11,6 +11,7 @@ public class TacoScreen {
 
     public Taco buildTaco() {
 
+        //This is to gather information about the sizes of the taco the user prefers
         String size = "";
         while (true) {
             System.out.println("\nChoose Taco Size:");
@@ -24,6 +25,7 @@ public class TacoScreen {
             System.out.println("Invalid size. Try again.");
         }
 
+        //Loop and switch statements to ask the user for what type of tortilla if any
         String tortilla = "";
         while (true) {
             System.out.println("\nChoose Tortilla Type:");
@@ -55,6 +57,7 @@ public class TacoScreen {
         ArrayList<String> protein = new ArrayList<>();
         boolean choosingProtein = true;
 
+        //Protein options are considered premium, the user will know and the cost will be added per protein option
         while (choosingProtein) {
             System.out.println("\nChoose Protein Options:");
             System.out.println("1) Chicken (+$1.45)");
@@ -116,6 +119,8 @@ public class TacoScreen {
         ArrayList<String> dairy = new ArrayList<>();
         boolean choosingDairy = true;
 
+        //Dairy options are premium, but are all the same prices
+        //Switch statements are there to gather the dairy name to store
         while (choosingDairy) {
             System.out.println("\nChoose Dairy Options (All dairy options are $0.45 each):");
             System.out.println("1) Jack Cheese");
@@ -157,6 +162,8 @@ public class TacoScreen {
         ArrayList<String> toppings = new ArrayList<>();
         boolean choosingToppings = true;
 
+        //Big sub menu for toppings
+        // The toppings will be free besides a few premium toppings that do not fit in other categories
         while (choosingToppings) {
             System.out.println("\nChoose Toppings:");
             System.out.println("1) Whole Black Beans");
@@ -231,6 +238,8 @@ public class TacoScreen {
             }
         }
 
+        //The user will be able to choose one salsa type if desired.
+        //Dona salsa will have a slight upcharge
         String salsa = "";
         while (true) {
             System.out.println("\nChoose Salsa:");
@@ -270,8 +279,11 @@ public class TacoScreen {
         ArrayList<String> sides = new ArrayList<>();
         boolean choosingSides = true;
 
+
+        //Small sides menu
+        //All sides are the same price, which will include a smaller switch statement
         while (choosingSides) {
-            System.out.println("\nChoose Sides:");
+            System.out.println("\nChoose Sides ($1.75 each):");
             System.out.println("1) Chips");
             System.out.println("2) Rice");
             System.out.println("3) Beans");
@@ -306,6 +318,7 @@ public class TacoScreen {
         return new Taco(size, tortilla, protein, dairy, toppings, salsa, sides);
     }
 
+    //Method to store items that the user chooses
     private void addIfNotExists(ArrayList<String> list, String item) {
         if (!list.contains(item)) {
             list.add(item);

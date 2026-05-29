@@ -8,9 +8,10 @@ import java.util.ArrayList;
 
 public class Order {
 
+    //Create a small constructor for the 3 big items that we sell
     private ArrayList<Taco> tacos;
-    private ArrayList<Appetizer>appetizers;
-    private ArrayList<Drink>drinks;
+    private ArrayList<Appetizer> appetizers;
+    private ArrayList<Drink> drinks;
 
     public Order() {
         this.tacos = new ArrayList<>();
@@ -21,9 +22,11 @@ public class Order {
     public void addTaco(Taco taco) {
         tacos.add(taco);
     }
+
     public void addAppetizer(Appetizer appetizer) {
         appetizers.add(appetizer);
     }
+
     public void addDrink(Drink drink) {
         drinks.add(drink);
     }
@@ -40,6 +43,7 @@ public class Order {
         return appetizers;
     }
 
+    //This method is to get the sum of the user's order
     public double getTotalPrice() {
         double total = 0;
 

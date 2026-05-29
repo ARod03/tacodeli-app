@@ -16,11 +16,13 @@ public class OrderScreen {
         this.scanner = new Scanner(System.in);
     }
 
+    //Create a method to be able to display the order screen in the main application
     public void display() {
         Order order = new Order();
         boolean ordering = true;
 
-        while(ordering) {
+        //While loops to show the order screen
+        while (ordering) {
             System.out.println("\n==== Order Menu ====");
             System.out.println("1) Add Taco");
             System.out.println("2) Add Appetizer");

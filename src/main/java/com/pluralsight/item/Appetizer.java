@@ -10,6 +10,8 @@ public class Appetizer {
     public Appetizer(String dipping) {
         this.dipping = dipping;
 
+
+        //If else-if statements to determine prices of each dipping
         if (dipping.equalsIgnoreCase("Salsa")) {
             this.price = 3.50;
         } else if (dipping.equalsIgnoreCase("Queso")) {

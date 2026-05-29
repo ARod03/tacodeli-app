@@ -12,11 +12,13 @@ public class DrinkScreen {
         this.scanner = new Scanner(System.in);
     }
 
+    //Method to store two empty variables until the user decides to choose what type of drink and size they would like
     public Drink buildDrink() {
         String drinkName = null;
         String size = null;
 
-        while(drinkName == null) {
+        //Create a method to get the user's drink
+        while (drinkName == null) {
             System.out.println("\n==== Drink Menu ====");
             System.out.println("1) Fountain Drink - Maine Root (Cola, Diet Cola, Root Beer, Ginger Brew, Pink Drink, Doppelganger)");
             System.out.println("2) Iced Tea (Black, Hibiscus)");
@@ -27,6 +29,7 @@ public class DrinkScreen {
 
             String drinkChoice = scanner.nextLine().trim();
 
+            //Switch statement to grab the name of what the category the user wants to drink
             switch (drinkChoice) {
                 case "1":
                     drinkName = "Fountain Drink";
@@ -48,7 +51,8 @@ public class DrinkScreen {
             }
         }
 
-        while(size == null) {
+        //This is a while loop to force the user to pick a size
+        while (size == null) {
             System.out.println("Select a size: ");
             System.out.println("S - Small");
             System.out.println("M - Medium");

@@ -1,0 +1,23 @@
+=========== TacoDeli Receipt ===========
+Date: 05/29/2026 03:49
+========================================
+
+TACOS:
+Taco [S, Flour]
+Proteins: [Barbacoa]
+Dairy: [Queso Liquido]
+Salsa: Habanero
+Toppings: Cooked Onions, Poblanos
+Sides: [Rice]
+   Price: $6.35
+
+APPETIZERS:
+ - Chips with Salsa  $3.50
+ - Chips with Guacamole  $5.00
+
+DRINKS:
+ - Small Iced Tea  $2.50
+
+========================================
+TOTAL: $17.35
+========================================
