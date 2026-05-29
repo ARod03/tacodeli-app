@@ -32,6 +32,7 @@ tacodeli-app/
 │
 ├── README.md
 └── pom.xml (if using Maven)
+
 🧩 How It Works
 1. Home Screen
 Users choose what they want to do:
