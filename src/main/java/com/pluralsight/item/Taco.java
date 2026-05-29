@@ -14,7 +14,7 @@ public class Taco {
     private ArrayList<String> sides;
     private double price;
 
-    public Taco(String size, String tortilla, ArrayList<String> protein, ArrayList<String> dairy, ArrayList<String> toppings, String salsas, ArrayList<String> sides, double price) {
+    public Taco(String size, String tortilla, ArrayList<String> protein, ArrayList<String> dairy, ArrayList<String> toppings, String salsa, ArrayList<String> sides) {
         this.size = size;
         this.tortilla = tortilla;
         this.protein = protein;
@@ -22,12 +22,11 @@ public class Taco {
         this.toppings = toppings;
         this.salsa = salsa;
         this.sides = sides;
-        this.price = price;
 
         calculatePrice();
     }
 
-    private void calculatePrice(){
+    private void calculatePrice() {
         price = 0;
 
         if (size.equalsIgnoreCase("S")) {
@@ -44,40 +43,44 @@ public class Taco {
                     price += 1.45;
                 else if (p.equalsIgnoreCase("Barbacoa"))
                     price += 1.45;
-                else if  (p.equalsIgnoreCase("Sausage"))
+                else if (p.equalsIgnoreCase("Sausage"))
                     price += 0.75;
-                else if  (p.equalsIgnoreCase("Chorizo"))
+                else if (p.equalsIgnoreCase("Chorizo"))
                     price += 0.75;
-                else if  (p.equalsIgnoreCase("Eggs"))
+                else if (p.equalsIgnoreCase("Eggs"))
                     price += 0.45;
-                else if  (p.equalsIgnoreCase("Bacon"))
+                else if (p.equalsIgnoreCase("Bacon"))
                     price += 0.45;
-                else if  (p.equalsIgnoreCase("Veggie Nut Chorizo"))
+                else if (p.equalsIgnoreCase("Veggie Nut Chorizo"))
                     price += 1.45;
-                else if  (p.equalsIgnoreCase("Picadillo"))
+                else if (p.equalsIgnoreCase("Picadillo"))
                     price += 1.45;
             }
         }
 
         if (dairy != null) {
-            for (String p : dairy) {
-                if (p.equalsIgnoreCase("Jack Cheese"))
+            for (String d : dairy) {
+                if (d.equalsIgnoreCase("Jack Cheese"))
                     price += 0.45;
-                else if (p.equalsIgnoreCase("Queso Fresco"))
+                else if (d.equalsIgnoreCase("Queso Fresco"))
                     price += 0.45;
-                else if  (p.equalsIgnoreCase("Queso Liquido"))
+                else if (d.equalsIgnoreCase("Queso Liquido"))
                     price += 0.45;
-                else if  (p.equalsIgnoreCase("Sour Cream"))
+                else if (d.equalsIgnoreCase("Sour Cream"))
                     price += 0.45;
+            }
+        }
+
+        if (toppings != null) {
+            for (String t : toppings) {
+                if (t.equalsIgnoreCase("Avocado") || t.equalsIgnoreCase("Fresh Spinach") || t.equalsIgnoreCase("Sauteed Spinach")) {
+                    price += 1.00;
+                }
             }
         }
 
         if (salsa != null && salsa.equalsIgnoreCase("Dona")) {
             price += 0.10;
-        }
-
-        if (toppings != null) {
-            price += toppings.size() * 0.45;
         }
 
         if (sides != null) {
@@ -88,24 +91,31 @@ public class Taco {
     public String getSize() {
         return size;
     }
+
     public String getTortilla() {
         return tortilla;
     }
+
     public ArrayList<String> getProtein() {
         return protein;
     }
+
     public ArrayList<String> getDairy() {
         return dairy;
     }
+
     public ArrayList<String> getToppings() {
         return toppings;
     }
+
     public String getSalsa() {
         return salsa;
     }
+
     public ArrayList<String> getSides() {
         return sides;
     }
+
     public double getPrice() {
         return price;
     }
