@@ -1,7 +1,69 @@
 package com.pluralsight.menuScreen;
 
+import com.pluralsight.item.Appetizer;
+import com.pluralsight.item.Drink;
+import com.pluralsight.item.Taco;
+import com.pluralsight.order.Order;
+import com.pluralsight.order.Receipt;
+
+import java.util.Scanner;
+
 public class HomeScreen {
 
+    private Scanner scanner;
+    private Order order;
 
+    public HomeScreen() {
+        this.scanner = new Scanner(System.in);
+        this.order = new Order();
+    }
 
+    public void displayHomeScreen() {
+        boolean running = true;
+        while (running) {
+            System.out.println("\n======== TacoDeli Ordering ========");
+            System.out.println("1) Build a Taco");
+            System.out.println("2) Add a Drink");
+            System.out.println("3) Add an Appetizer");
+            System.out.println("4) Checkout");
+            System.out.println("5) Exit App");
+            System.out.print("Enter your choice: ");
+
+            String menuChoice = scanner.nextLine().trim();
+            switch (menuChoice) {
+                case "1":
+                    TacoScreen tacoScreen = new TacoScreen();
+                    Taco taco = tacoScreen.buildTaco();
+                    order.addTaco(taco);
+                    System.out.println("Taco added successfully");
+                    break;
+                case "2":
+                    DrinkScreen drinkScreen = new DrinkScreen();
+                    Drink drink = drinkScreen.buildDrink();
+                    order.addDrink(drink);
+                    System.out.println("Drink added successfully");
+                    break;
+                case "3":
+                    AppetizerScreen appetizerScreen = new AppetizerScreen();
+                    Appetizer appetizer = appetizerScreen.buildAppetizer();
+                    order.addAppetizer(appetizer);
+                    System.out.println("Appetizer added successfully");
+                    break;
+                case "4":
+                    Receipt receipt = new Receipt();
+                    String text = receipt.generateReceipt(order);
+
+                    System.out.println("\n" + text);
+                    System.out.println("Thank you for placing your order.");
+                    running = false;
+                    break;
+                case "5":
+                    System.out.println("Thank you for choosing TacoDeli!");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
 }
