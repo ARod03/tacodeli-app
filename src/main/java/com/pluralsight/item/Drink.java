@@ -1,6 +1,5 @@
 package com.pluralsight.item;
 
-import java.util.ArrayList;
 
 public class Drink {
 
@@ -13,13 +12,13 @@ public class Drink {
         this.drinkName = drinkName;
         this.size = size;
 
-        if (size.equalsIgnoreCase("S")) {
+        if (size.equalsIgnoreCase("Small")) {
             this.price = 2.50;
         }
-        else if (size.equalsIgnoreCase("M")) {
+        else if (size.equalsIgnoreCase("Medium")) {
             this.price = 3.00;
         }
-        else if (size.equalsIgnoreCase("L")) {
+        else if (size.equalsIgnoreCase("Large")) {
             this.price = 3.50;
         }
     }

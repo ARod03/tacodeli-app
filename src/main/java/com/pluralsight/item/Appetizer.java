@@ -10,11 +10,11 @@ public class Appetizer {
     public Appetizer(String dipping) {
         this.dipping = dipping;
 
-        if (dipping.equalsIgnoreCase("S")) {
+        if (dipping.equalsIgnoreCase("Salsa")) {
             this.price = 3.50;
-        } else if (dipping.equalsIgnoreCase("Q")) {
+        } else if (dipping.equalsIgnoreCase("Queso")) {
             this.price = 4.00;
-        } else if (dipping.equalsIgnoreCase("G")) {
+        } else if (dipping.equalsIgnoreCase("Guacamole")) {
             this.price = 5.00;
         }
 

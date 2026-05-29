@@ -1,0 +1,16 @@
+=========== TacoDeli Receipt ===========
+Date: 05/29/2026 03:34
+========================================
+
+TACOS:
+ - Taco (S, Flour)
+Proteins: [Chicken]
+Dairy: [Jack Cheese]
+Salsa: Verde
+Toppings: Whole Black Beans
+   Sides: [Chips]
+   Price: $6.35
+
+========================================
+TOTAL: $6.35
+========================================
