@@ -8,43 +8,38 @@ import java.util.ArrayList;
 
 public class Order {
 
-    private ArrayList<Taco> tacoOrder;
-    private ArrayList<Appetizer>appetizerOrder;
-    private ArrayList<Drink>drinkOrder;
-    private double totalPrice;
+    private ArrayList<Taco> tacos;
+    private ArrayList<Appetizer>appetizers;
+    private ArrayList<Drink>drinks;
 
     public Order() {
-        this.tacoOrder = new ArrayList<>();
-        this.appetizerOrder = new ArrayList<>();
-        this.drinkOrder = new ArrayList<>();
-        this.totalPrice = 0;
+        this.tacos = new ArrayList<>();
+        this.appetizers = new ArrayList<>();
+        this.drinks = new ArrayList<>();
     }
 
     public void addTaco(Taco taco) {
-        tacoOrder.add(taco);
-        totalPrice += taco.getPrice();
+        tacos.add(taco);
     }
     public void addAppetizer(Appetizer appetizer) {
-        appetizerOrder.add(appetizer);
-        totalPrice += appetizer.getPrice();
+        appetizers.add(appetizer);
     }
     public void addDrink(Drink drink) {
-        drinkOrder.add(drink);
-        totalPrice += drink.getPrice();
+        drinks.add(drink);
     }
 
     public double getTotalPrice() {
-        return totalPrice;
-    }
+        double total = 0;
 
-    public ArrayList<Taco> getTacoOrder() {
-        return tacoOrder;
+        for (Taco taco : tacos) {
+            total += taco.getPrice();
+        }
+        for (Drink drink : drinks) {
+            total += drink.getPrice();
+        }
+        for (Appetizer appetizer : appetizers) {
+            total += appetizer.getPrice();
+        }
+        return total;
     }
-    public ArrayList<Appetizer> getAppetizerOrder() {
-        return appetizerOrder;
-    }
-    public ArrayList<Drink> getDrinkOrder() {
-        return drinkOrder;
-    }
-
 }
